@@ -66,15 +66,15 @@ public class FirstSeleniumTest {
     public void loginScreenTest(){
         WebElement emailElement = driver.findElement(By.xpath("//input[@name='email']"));
         assertNotNull(emailElement);
-        emailElement.sendKeys("jtsonyajt@gmail.com");
+        emailElement.sendKeys("12345@gmail.com");
         String emailValue = emailElement.getAttribute("value");
-        assertEquals("jtsonyajt@gmail.com", emailValue);
+        assertEquals("12345@gmail.com", emailValue);
 
         WebElement passwordElement = driver.findElement(By.xpath("//input[@data-testid='royal_pass']"));
         assertNotNull(passwordElement);
-        passwordElement.sendKeys("PleaseBe2023!");
+        passwordElement.sendKeys("45685!");
         String passValue = passwordElement.getAttribute("value");
-        assertEquals("PleaseBe2023!", passValue);
+        assertEquals("45685!", passValue);
 
         WebElement loginButtonElement = driver.findElement(By.xpath("//button[@type='submit']"));
         assertNotNull(loginButtonElement);
