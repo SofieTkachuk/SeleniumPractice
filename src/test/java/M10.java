@@ -33,7 +33,12 @@ public class M10 {
 
     //Find Xpathes for each text box component and Sign Up button
     @Test
-    public void elementsByXPath(){
+    public void elementsByXPath() throws InterruptedException {
+        WebElement newAccButtonElement = driver.findElement(By.xpath("//a[text()='Создать новый аккаунт']"));
+        assertNotNull(newAccButtonElement);
+        newAccButtonElement.click();
+        Thread.sleep(1000);
+
         WebElement firstNameFieldElement = driver.findElement(By.xpath("//input[@name='firstname']"));
         assertNotNull(firstNameFieldElement);
 
@@ -53,6 +58,7 @@ public class M10 {
     //JUnit tests for account creation page
     @Test
     public void accCreationPageTest(){
+
         WebElement firstNameFieldElement = driver.findElement(By.xpath("//input[@name='firstname']"));
         assertNotNull(firstNameFieldElement);
         firstNameFieldElement.sendKeys("Sofie");
@@ -91,11 +97,7 @@ public class M10 {
 
     //Think about long text testing, special character testing, invalid inputs (email), etc. For now, don`t test the error messages, just validate that the new screen was not opened.
     @Test
-    public void longTextTesting() throws InterruptedException {
-        WebElement newAccButtonElement = driver.findElement(By.xpath("//a[text()='Создать новый аккаунт']"));
-        assertNotNull(newAccButtonElement);
-        newAccButtonElement.click();
-        Thread.sleep(1000);
+    public void longTextTesting() {
 
         WebElement firstNameFieldElement = driver.findElement(By.xpath("//input[@name='firstname']"));
         assertNotNull(firstNameFieldElement);
@@ -168,13 +170,17 @@ public class M10 {
         newAccButtonElement.click();
         Thread.sleep(1000);
 
-        WebElement customGender = driver.findElement(By.xpath("//input[@id='u_1d_6_Ju]"));
+        WebElement customGender = driver.findElement(By.xpath("//input[@value='-1']"));
         assertNotNull(customGender);
         customGender.click();
     }
 
     @Test
-    public void newTextBoxesTesting() {
+    public void newTextBoxesTesting() throws InterruptedException {
+        WebElement newAccButtonElement = driver.findElement(By.xpath("//a[text()='Create new account']"));
+        newAccButtonElement.click();
+        Thread.sleep(1000);
+
         WebElement sexField = driver.findElement(By.xpath("//input[@name='custom_gender']"));
         assertNotNull(sexField);
         sexField.sendKeys("They/Them");
