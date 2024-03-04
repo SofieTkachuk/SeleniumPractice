@@ -173,13 +173,6 @@ public class M10 {
         WebElement customGender = driver.findElement(By.xpath("//input[@value='-1']"));
         assertNotNull(customGender);
         customGender.click();
-    }
-
-    @Test
-    public void newTextBoxesTesting() throws InterruptedException {
-        WebElement newAccButtonElement = driver.findElement(By.xpath("//a[text()='Create new account']"));
-        newAccButtonElement.click();
-        Thread.sleep(1000);
 
         WebElement sexField = driver.findElement(By.xpath("//input[@name='custom_gender']"));
         assertNotNull(sexField);
