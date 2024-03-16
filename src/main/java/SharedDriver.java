@@ -12,7 +12,6 @@ public class SharedDriver {
             webDriver = new ChromeDriver();
             webDriver.manage().window().maximize();
             //webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
         }
         return webDriver;
     }
